@@ -47,11 +47,11 @@ class Car {
         const alpha=Math.atan2(this.width,this.height);
 
         points.push({
-            x:this.x-Math.sin(this.angle-alpha)*rad,
+            x:this.x-Math.sin(this.angle-alpha)*rad*0.2,
             y:this.y-Math.cos(this.angle-alpha)*rad
         });
         points.push({
-            x:this.x-Math.sin(this.angle+alpha)*rad,
+            x:this.x-Math.sin(this.angle+alpha)*rad*0.2,
             y:this.y-Math.cos(this.angle+alpha)*rad
         });
 
@@ -105,11 +105,11 @@ class Car {
     draw(ctx) {
         if(this.damaged)
         {
-            ctx.fillStyle="gray";
+            ctx.fillStyle="red";
         }
         else
         {
-            ctx.fillStyle="black";
+            ctx.fillStyle="green";
         }
         ctx.beginPath();
         ctx.moveTo(this.polygon[0].x,this.polygon[0].y);
